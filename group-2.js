@@ -48,13 +48,17 @@ Calculation: dob = currentYear - age
 Output: Hello user, you were born in the year ----
 */
 function greetMore() {
-    const name = prompt('What is your name?')
-    const age = prompt('How old are you?')
-    const currentYear = 2026
-    const yearOfBirth = currentYear - age
+    const name = prompt('What is your name?');
+    const age = prompt('How old are you?');
+    const currentYear = 2026;
+    const yearOfBirth = currentYear - age;
     let greeting = alert(`Hello ${name}, you were born in the year ${yearOfBirth}`)
-    console.log(greeting)
+    console.log(greeting);
     return greeting;
-}
+};
 
-
+let a = 5
+let b = 10
+console.log(`print: $${a*b}`)
+console.log("print: " + a+b)
+console.log("print: " + (a+b))
