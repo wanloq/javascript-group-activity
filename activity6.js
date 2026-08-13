@@ -1,6 +1,6 @@
 
 /* ================================================================================== */
-// Activity 3
+// Activity 6
 
 /*
 Part 4: Collaborative Technical Challenge 

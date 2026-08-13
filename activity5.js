@@ -48,7 +48,7 @@ function getMovieTicket() {
     const name = prompt('Hey movie lover! What is your name?').trim();
     let day = prompt('"Weekday" or "Weekend" ticket?').trim();
     // we could check and end the program here if day is not valid
-    
+
     const age = parseInt(prompt('How old are you?'));
     // we could also check and end the program here if age is not a valid number
 
@@ -61,20 +61,46 @@ function getMovieTicket() {
     if (day == 'weekday') {
 
         price = 100;
-        price = age <= 1 ? 'Sorry Baby, you are too young.'
-            : age >= 1 && age <= 12 ? (price - 30)
-                : age >= 70 && age <= 95 ? (price - 20)
-                    : age > 96 ? 'Sorry you are obsolete!'
-                        : price;
+
+        if (age <= 1) {
+            price = 'Sorry Baby, you are too young.'
+        } else if (age >= 1 && age <= 12) {
+            price = price - 30
+        } else if (age >= 70 && age <= 95) {
+            price = price - 20
+        } else if (age >= 96) {
+            price = 'Sorry you are obsolete!'
+        } else {
+            price = price
+        };
+
+        // price = age <= 1 ? 'Sorry Baby, you are too young.'
+        //     : age >= 1 && age <= 12 ? (price - 30)
+        //         : age >= 70 && age <= 95 ? (price - 20)
+        //             : age > 96 ? 'Sorry you are obsolete!'
+        //                 : price;
 
     } else if (day == 'weekend') {
 
         price = 150;
-        price = age <= 1 ? 'Sorry Baby, you are too young.'
-            : age >= 1 && age <= 12 ? (price - 30)
-                : age >= 70 && age <= 95 ? (price - 20)
-                    : age > 96 ? 'Sorry you are obsolete!'
-                        : price;
+
+        if (age <= 1) {
+            price = 'Sorry Baby, you are too young.'
+        } else if (age >= 1 && age <= 12) {
+            price = price - 30
+        } else if (age >= 70 && age <= 95) {
+            price = price - 20
+        } else if (age >= 96) {
+            price = 'Sorry you are obsolete!'
+        } else {
+            price = price
+        };
+
+        // price = age <= 1 ? 'Sorry Baby, you are too young.'
+        //     : age >= 1 && age <= 12 ? (price - 30)
+        //         : age >= 70 && age <= 95 ? (price - 20)
+        //             : age > 96 ? 'Sorry you are obsolete!'
+        //                 : price;
 
     } else {
         err = day.toUpperCase() + (' is not a valid input. Please respond with either "Weekday" or "Weekend" when choosing a day.');
