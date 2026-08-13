@@ -1,37 +1,33 @@
 
-// Activity 4
+// Activity 8
 
 /*
-Scenario: Build a "Grade Rounder and Reporter" that asks for a student's exact 
-numeric score, rounds it, and builds a message reporting the rounded score along 
-with the student's name in all uppercase. 
-Step 1 — Understand the Problem: Explain the goal in your own words. 
-Step 2 — Identify Inputs: What does the program need from the user? 
-Step 3 — Identify Processing: What Math and string methods will you need? 
-Step 4 — Identify Outputs: What should the final message look like? 
-Step 5 — Plan the Solution: Write your plan in plain English first. 
-Step 6 — Write the Code: Combine Math methods, string methods, and template 
-literals. 
-Step 7 — Test the Program: 
-● Name: "grace", Score: 89.5 
-● Name: "Chuka", Score: 100 
-● Name: " Bisi " (extra spaces), Score 59.3 
-Step 8 — Improve the Solution: Discuss whether trimming the name before 
-uppercasing it would make the program more reliable. 
+ 
+Scenario: Build a "Tip Calculator Toolkit" made of two functions: one that calculates a 
+tip based on a bill amount and tip percentage, and another that displays a 
+formatted final message. 
+Step 1 — Understand the Problem: Explain what each function should do, separately. 
+Step 2 — Identify Inputs: What parameters does each function need? 
+Step 3 — Identify Processing: What calculation happens inside the tip function? 
+Step 4 — Identify Outputs: What should each function produce or display? 
+Step 5 — Plan the Solution: Decide as a group how many functions you'll use and 
+what each one is responsible for, before writing code. 
+Step 6 — Write the Code: Declare your functions with parameters, then call them with 
+test values. 
+Step 7 — Test the Program 
 Part 5: Extension Challenge 
-Add Math.random() to simulate a "bonus point" between 0 and 5 that gets added to 
-the score before rounding. Discuss how you'd make sure the random bonus is always 
-a whole number. 
+Add a third function that calculates the total bill split evenly between a given number 
+of people  
 
  */
 
-// Receipt generation Program
+// Trip calculator Program
 /* 
 Input (prompt): userName, itemName, itemPrice, quantity
 Processing: total = itemPrice * quantity
 Output (alert): Hello User, you bought -- number of -- for 
 */
-function generateReceipt() {
+function tripCalculator() {
 
     // Input
     const userName = prompt('Hello! What is your name?');
