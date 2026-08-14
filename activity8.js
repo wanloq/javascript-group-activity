@@ -21,58 +21,45 @@ of people
 
  */
 
-// Trip calculator Program
+// Tip calculator Program
 /* 
-Input (prompt): userName, itemName, itemPrice, quantity
-Processing: total = itemPrice * quantity
-Output (alert): Hello User, you bought -- number of -- for 
+Input (parameters): amount($), tip(%)
+Processing: total = %increase(amount*(tip/100))
+Output (return): totalTip($) 
 */
-function tripCalculator() {
 
-    // Input
-    const userName = prompt('Hello! What is your name?');
-    const itemName = prompt('What did you buy?');
-    const itemPrice = prompt('What is the price of each?');
-    const quantity = prompt('How many did you take?');
+function tipCalculator(amount, tip) {
 
     // Processing
-    const total = itemPrice * quantity;
+    const totalTip = amount * (tip / 100);
 
     // Output
-    let result = alert(`Hello ${userName}, you bought: ${quantity} ${itemName} for $${itemPrice} each. Your total bill is: $${total}`)
-    console.log(result);
+    console.log(totalTip);
 
-    return result;
+    return totalTip;
 };
 
-/*
-Part 5: Extension Challenge 
-Add a "discount code" variable to your program. If a discount amount (as a number) 
-is applied, subtract it from the total before displaying the final receipt line. 
- */
 
-// Receipt generation Program
+// Tip display Program
 /* 
-Input (prompt): userName, itemName, itemPrice, quantity
-Processing: total = itemPrice * quantity
-Output (alert): Hello User, you bought -- number of -- for 
+Input (prompt): amount($), tip(%)
+Processing: totalBill = amount + totalTip
+Output (alert): a formatted message: "For a bill of $(amount) with a (tip)% tip, you should leave $(totalTip). Your total is $115."
 */
-function generateExtendedReceipt() {
 
-    let discount = 0;
+function tipDisplay() {
+
     // Input
-    const userName = prompt('Hello! What is your name?');
-    const itemName = prompt('What did you buy?');
-    const itemPrice = prompt('What is the price of each?');
-    const quantity = prompt('How many did you take?');
-    discount = prompt('Enter Discount Amount (number only)');
+    const amount = Number(prompt('What is the total spend in $$ (e.g. 150)?'));
+    const tip = prompt('What is the acceptable tip in percent (e.g. 15)?');
 
     // Processing
-    const total = itemPrice * quantity;
+    let totalTip = tipCalculator(amount, tip);
+    let totalBill = amount + totalTip;
 
     // Output
-    let result = alert(`Hello ${userName}, you bought: ${quantity} ${itemName} for $${itemPrice} each. The total cost is: $${total} and your total bill after a $${discount} discount is: $${total - discount}`)
-    console.log(result);
+    let message = `For a total spend of $${amount} and a ${tip}% tip, you should leave $${totalTip}. Your Total bill is $${totalBill}`;
 
-    return result;
+    console.log(message);
+    alert(message);
 };
