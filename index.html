@@ -45,11 +45,11 @@
    </section>
 
    <main
-      style="padding: 20px; margin-top: 200px; text-align: center; display:grid; grid-template-columns: 2fr 2fr 2fr; align-items: center; justify-content: center; gap: 20px; max-width: 85%; margin:auto;">
+      style="padding: 20px; margin-top: 200px; text-align: center; display:grid; grid-template-columns: 2fr 2fr; align-items: center; justify-content: center; gap: 20px; max-width: 85%; margin:auto;">
 
       <!-- activity 1 -->
       <section
-         style="background-color: #1a1c26; padding: 20px; margin: 20px; width: 90%;; height: 60vh; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin:auto;">
+         style="background-color: #1a1c26; padding: 20px; margin: 20px; width: 90%;; height: auto; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin:auto;">
          <div style="color: lightgray; padding: 10px; margin: 10px; text-align: center;">
             <h2 style="text-align: center;">Activity 1</h2>
             <p style="text-align: left;">Your group needs to build a simple "Welcome Program" that greets a new
@@ -61,7 +61,7 @@
          <!-- Part 4 -->
 
          <div id=" "
-            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px;">
             <button onclick="greet()"
                style="padding: 10px 10px; font-size: 1rem; cursor: pointer; border-radius: 10px;">
                Part 4: Say Hello
@@ -89,7 +89,7 @@
 
          <!-- Part 4 -->
          <div id=" "
-            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px;">
             <button onclick="generateReceipt()"
                style="padding: 10px 10px; font-size: 1rem; cursor: pointer; border-radius: 10px;">
                Generate Receipt
@@ -120,7 +120,7 @@
          <!-- Part 4 -->
 
          <div id=" "
-            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px;">
             <button onclick="generateUsername()"
                style="padding: 10px 10px; font-size: 1rem; cursor: pointer; border-radius: 10px;">
                Generate Username
@@ -152,7 +152,7 @@
          <!-- Part 4 -->
 
          <div id=" "
-            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px;">
             <button onclick="generateReport()"
                style="padding: 10px 10px; font-size: 1rem; cursor: pointer; border-radius: 10px;">
                Generate Report
@@ -203,7 +203,7 @@
          <!-- Part 4 -->
 
          <div id=" "
-            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px;">
             <button onclick="tipDisplay(false)"
                style="padding: 10px 10px; font-size: 1rem; cursor: pointer; border-radius: 10px;">
                Calculate Tip
@@ -236,7 +236,7 @@
          <!-- Part 4 -->
 
          <div id=""
-            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
+            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px;">
             <button onclick="mathToolkit('percent')"
                style="padding: 10px 10px; font-size: 1rem; cursor: pointer; border-radius: 10px;">
                Percentage Calculator
@@ -260,22 +260,31 @@
 
       <!-- activity 10 -->
       <section
-         style="background-color: #1a1c26; padding: 20px; margin: 20px; width: 90%;; height: 60vh; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin:auto;">
+         style="background-color: #1a1c26; padding: 20px; margin: 10px; width: 90%;; height: 80vh; border-radius: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin:auto;">
          <div style="color: lightgray; padding: 10px; margin: 10px; text-align: center;">
             <h2 style="text-align: center;">Activity 10</h2>
-            <p style="text-align: left;">This activity helped the student hone the to select the right built-in method
-               for a task, whether working with text or numbers, and explain what each method actually does. </p>
+            <p style="text-align: left;">Build a complete "Order Checkout Program" that combines everything
+               from this course:
+            <ul style="text-align: left;">
+               <li>Collects an item name, price, and quantity using prompt()</li>
+               <li>Converts inputs to the correct data types</li>
+               <li>Uses a function to calculate the subtotal</li>
+               <li>Uses a conditional (or ternary) to apply free shipping if the total is above a certain amount</li>
+               <li>Displays a final formatted receipt using a template literal</li>
+            </ul>
+            </p>
          </div>
 
          <!-- Part 4 -->
 
-         <!--  <div id=" "
-            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
-            <button onclick="generateReport()"
+         <div id=" "
+            style="padding: 10px; margin: 10px; text-align: center; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px;">
+            <button onclick="placeOrder()"
                style="padding: 10px 10px; font-size: 1rem; cursor: pointer; border-radius: 10px;">
-               Part 4: Generate Report
+               Place an Order
             </button>
-         </div> -->
+         </div>
+         <div id="activity10" style="color: aquamarine; border: whitesmoke; border-width: 1px; text-align: left;"></div>
       </section>
 
    </main>

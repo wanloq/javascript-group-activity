@@ -1,82 +1,65 @@
 
 /* ================================================================================== */
-// Activity 3
+// Activity 10
 
 /*
 Part 4: Collaborative Technical Challenge 
-Scenario: Build a "Username Generator" that asks for a person's first name and 
-favorite number, converts the number properly, and creates a username by 
-combining the lowercase first name with the number. 
-Step 1 — Understand the Problem: Explain what the finished program should do. 
-Step 2 — Identify Inputs: What does the program need from the user? 
-Step 3 — Identify Processing: What conversions and string methods are needed? 
-Step 4 — Identify Outputs: What should the final username look like? 
-Step 5 — Plan the Solution: Write your plan in plain English first. 
-Step 6 — Write the Code: Use .toLowerCase(), type conversion, and template literals 
-or concatenation. 
+Scenario: Build a complete "Order Checkout Program" that combines everything 
+from this course: 
+● Collects an item name, price, and quantity using prompt() 
+● Converts inputs to the correct data types 
+● Uses a function to calculate the subtotal 
+● Uses a conditional (or ternary) to apply free shipping if the total is above a 
+certain amount 
+● Displays a final formatted receipt using a template literal 
+
+Step 1 — Understand the Problem: As a group, describe the entire program from start to finish in your own words. 
+Step 2 — Identify Inputs: List every piece of information the program needs from the user. 
+Step 3 — Identify Processing: List every calculation, conversion, and decision the program must make, in order. 
+Step 4 — Identify Outputs: Describe exactly what the final receipt should look like. 
+Step 5 — Plan the Solution: Write the full plain-English algorithm before writing any code. Assign no fixed roles — just talk through the logic together until everyone agrees on the plan. 
+Step 6 — Write the Code: Build the program using functions, conditionals/ternaries, and template literals together. 
 Step 7 — Test the Program: 
-● Name: "SARAH", Number: 7 
-● Name: "kunle", Number: "12" (typed as text) 
-● Name: " Ada " (with extra spaces), Number: 0 
-● Name: "Femi", Number: 3.5 
-Step 8 — Improve the Solution: Should you .trim() the name in case someone types 
-extra spaces? Discuss why or why not. 
+● Item: "Backpack", Price: 30, Quantity: 2 
+● Item: "Pen", Price: 1.5, Quantity: 20 
+Step 8 — Improve the Solution: As a group, review your finished program together. Is 
+there any repeated logic that could be turned into its own function? Are your variable 
+and function names clear to someone reading it for the first time?
 
  */
 
-// Username generation Program
+// Order checkout Program
 /* 
-Input (prompt): firstName, favNum
+Input (prompt): item name, price, and quantity
 Processing: convert firstname case, trim whitespace, generate userName
 Output (alert): Hello --, your username is -- 
 */
-function generateUsername() {
+
+
+const activity10 = document.querySelector("#activity10");
+// let message = '';
+
+function placeOrder() {
+
+    let shippingFee = 0;
 
     // Input
-    const firstName = prompt('Enter your First Name').trim().toUpperCase();
-    const favNum = prompt('What is your Favorite Number?');
+    const itemName = prompt('Enter Product Name').trim().toUpperCase();
+    const itemPrice = parseFloat(prompt('What is Price?'));
+    const quantity = parseInt(prompt('How many Pieces?'));
 
     // Processing
-    const userName = firstName.toLowerCase() + parseInt(favNum);
+    const subtotal = (itemPrice, quantity) => itemPrice * quantity;
+    subtotal(itemPrice, quantity) >= 100 ? shippingFee = 0 : shippingFee = 75;
+    let totalBill = subtotal(itemPrice, quantity) + shippingFee;
+
+    // Build display message
+    message = `Hey happy shopper!\n
+    You bought ${quantity} no. of ${itemName} at $${itemPrice} each.\n
+    A shipping fee of $${shippingFee} applies, hence your total bill is: $${totalBill}.\n
+    Thank you for shopping with us!.`;
 
     // Output
-    let result = alert(`Welcome! ${firstName}, your Username is: ${userName}`)
-    console.log(result);
-
-    return result;
-};
-
-
-
-/*
-Part 5: Extension Challenge 
-Add a check using .length — if the name is longer than 8 characters, only use the first 
-8 characters in the username.  
-
- */
-
-// Username generation Program
-/* 
-Input (prompt): firstName, favNum
-Processing: convert firstname case, trim whitespace, is char len of firstName over 8char?, generate userName
-Output (alert): Hello --, your username is -- 
-*/
-function generateUsernameExtended() {
-
-    // Input
-    const firstName = prompt('Enter your First Name').trim().toUpperCase();
-    const favNum = prompt('What is your Favorite Number?');
-
-    // Processing
-    let shortFirstName = firstName
-    if (firstName.length >= 8) {
-        shortFirstName = firstName.slice(0, 7)
-    }
-    const userName = shortFirstName.toLowerCase() + parseInt(favNum);
-
-    // Output
-    let result = alert(`Welcome! ${firstName}, your Username is: ${userName}`)
-    console.log(result);
-
-    return result;
+    activity10.innerText = message;
+    alert(message);
 };

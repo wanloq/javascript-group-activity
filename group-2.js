@@ -14,6 +14,7 @@ let price = 0;
 let age = 10;
 let day = 'weekend'
 
+
 if (day.toLowerCase() == 'weekday') {
     price = 1000;
     price = age <= 1 ? 'Babies are not allowed'
@@ -31,7 +32,7 @@ if (day.toLowerCase() == 'weekday') {
     console.log(price)
     return price
     console.log(day.toLowerCase(), 'is Invalid')
-}else{
+} else {
     price = day.toUpperCase() + (' is not a valid. Only respond with either "Weekday" or "Weekend" when choosing a day.')
     console.log(price)
 };
