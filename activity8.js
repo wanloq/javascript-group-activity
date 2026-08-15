@@ -54,7 +54,7 @@ Output (): build a formatted messages depending on which of the options (split b
 
 // Tip display function: Displays the formatted text summary both as alert and in html.
 function tipDisplay(split) {
-    const output = document.querySelector("#output");
+    const activity8 = document.querySelector("#activity8");
 
     let message = ''
 
@@ -87,7 +87,7 @@ function tipDisplay(split) {
     }
 
     // display the message on the page as html and as an alert also
-    output.innerText = message;
+    activity8.innerText = message;
     alert(message)
 
 };
