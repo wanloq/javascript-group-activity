@@ -1,4 +1,3 @@
-
 // Activity 8
 
 /*
@@ -20,26 +19,14 @@ Step 7 — Test the Program
 
 
 
-// Tip calculator function
 /* 
 Input (parameters): amount($), tip(%)
 Processing: total = %increase(amount*(tip/100))
 Output (return): totalTip($) 
 */
-const output = document.querySelector("#output");
-let message = ''
-let amount = 0;
-let tip = 0;
-let shareNum = 0;
-let totalTip = 0;
-let totalBill = 0;
 
-
-function tipCalculator() {
-
-    // Input
-    amount = parseFloat(prompt('What is the total spend in $$ (e.g. 150)?'));
-    tip = parseFloat(prompt('What is the acceptable tip in percent (e.g. 15)?'));
+// Tip calculator function: Returns total tip in dollars
+function tipCalculator(amount, tip) {
 
     // Processing
     const totalTip = amount * (tip / 100);
@@ -53,46 +40,53 @@ function tipCalculator() {
 
 
 
-// Tip display function
 /* 
-
-Input (prompt): 
-amount($), tip(%)
-get the shared bill from the splitBill function
+Input (prompt): amount($), tip(%), number of heads
+Input (parameters): take (split) a boolean as parameter 
+Input (function call): get the shared bill and computed totalTip from the splitBill and tipCalculator functions
 
 Processing: 
-totalBill = amount + totalTip
 use if-else block to check which of the tip types the user wants to display
 
 
 Output (): build a formatted messages depending on which of the options (split bill or not) 
-
 */
 
+// Tip display function: Displays the formatted text summary both as alert and in html.
 function tipDisplay(split) {
+    const output = document.querySelector("#output");
+
+    let message = ''
+
+    // Input
+    const amount = parseFloat(prompt('What is the total spend in $$ (e.g. 150)?'));
+    const tip = parseFloat(prompt('What is the acceptable tip in percent (e.g. 15)?'));
+    const shareNum = parseInt(prompt('How many will share the bill (e.g. 3)?'));
 
     // check which button the user clicked
-    // if user clicked the button to "split the bill":
     if (split) {
 
+        // if user clicked the button to "split the bill":
         // get  the shared bill from the splitBill function
-        let sharedBill = splitBill()
+        let sharedBill = splitBill(amount, tip, shareNum)
 
-        // build message for split bill function
+        // build message for a split bill
         message = `The total bill of $${totalBill} has been successfully divided equally between ${shareNum} people and each person will pay $${sharedBill}`;
 
     } else {
         // if user clicked the "calculate tip" button:
         // get the total tip from the tip calculator function
-        totalTip = tipCalculator();
-        totalBill = amount + totalTip;
+        const totalTip = tipCalculator(amount, tip);
 
-        // build message for 
+        // get the total bill from the splitBill function
+        totalBill = splitBill(amount, totalTip, 1);
+
+        // build message for non-split bills
         message = `For a total spend of $${amount} and a ${tip}% tip, you should leave $${totalTip}. Your Total bill is $${totalBill}`;
 
     }
 
-
+    // display the message on the page as html and as an alert also
     output.innerText = message;
     alert(message)
 
@@ -100,36 +94,28 @@ function tipDisplay(split) {
 
 
 /* 
-Split the bill extension
-
 Part 5: Extension Challenge 
 Add a third function that calculates the total bill split evenly between a given number 
 of people  
 
 
-Input (prompt): number of heads, 
-Input (from tipDisplay function): amount($), tip(%)
+Input (parameters): amount($), tip(%) number of heads, 
 
 Processing: 
 totalBill = amount + totalTip
 sharedBill = totalBill/number of heads
 
 Output (alert): return sharedBill
-
 */
 
-function splitBill() {
-
-    // Input
-    let totalTip = tipCalculator();
-    shareNum = parseInt(prompt('How many will share the bill (e.g. 3)?'));
+// Split the bill function: Returns a divided bill between the number of heads indicated
+function splitBill(amount, totalTip, shareNum) {
 
     // Processing
     let totalBill = amount + totalTip;
-    let sharedBill = 0;
 
     // equal share (no rounding)
-    sharedBill = totalBill / shareNum;
+    let sharedBill = totalBill / shareNum;
 
     return sharedBill;
 
