@@ -42,6 +42,8 @@ Output (alert):
 Hey (name), the cost of your ticket for a (day) movie after applying discounts and bonuses is ($price)
 */
 
+const activity5 = document.querySelector("#activity5");
+
 function getMovieTicket() {
 
     // Input
@@ -63,16 +65,18 @@ function getMovieTicket() {
         price = 100;
 
         if (age <= 1) {
-            price = 'Sorry Baby, you are too young.'
+            price = 'Sorry Baby, you are too young.';
         } else if (age >= 1 && age <= 12) {
-            price = price - 30
+            price = price - 30;
         } else if (age >= 70 && age <= 95) {
-            price = price - 20
+            price = price - 20;
         } else if (age >= 96) {
-            price = 'Sorry you are obsolete!'
+            price = 'Sorry you are obsolete!';
         } else {
-            price = price
+            price = price;
         };
+
+        message = `Hey ${name}, the cost of your ticket for a ${day} movie after applying discounts and bonuses is $${price}`;
 
         // price = age <= 1 ? 'Sorry Baby, you are too young.'
         //     : age >= 1 && age <= 12 ? (price - 30)
@@ -85,16 +89,18 @@ function getMovieTicket() {
         price = 150;
 
         if (age <= 1) {
-            price = 'Sorry Baby, you are too young.'
+            price = 'Sorry Baby, you are too young.';
         } else if (age >= 1 && age <= 12) {
-            price = price - 30
+            price = price - 30;
         } else if (age >= 70 && age <= 95) {
-            price = price - 20
+            price = price - 20;
         } else if (age >= 96) {
-            price = 'Sorry you are obsolete!'
+            price = 'Sorry you are obsolete!';
         } else {
-            price = price
+            price = price;
         };
+
+        message = `Hey ${name}, the cost of your ticket for a ${day} movie after applying discounts and bonuses is $${price}`;
 
         // price = age <= 1 ? 'Sorry Baby, you are too young.'
         //     : age >= 1 && age <= 12 ? (price - 30)
@@ -103,15 +109,12 @@ function getMovieTicket() {
         //                 : price;
 
     } else {
-        err = day.toUpperCase() + (' is not a valid input. Please respond with either "Weekday" or "Weekend" when choosing a day.');
-        console.log(err);
-        alert(err)
+        message = day.toUpperCase() + (' is not a valid input. Please respond with either "Weekday" or "Weekend" when choosing a day.');
+
     };
 
 
-    output = (`Hey ${name}, the cost of your ticket for a ${day} movie after applying discounts and bonuses is $${price}`);
-
-    // Output
-    console.log(output);
-    alert(output)
+    // display the message on the page as html and as an alert also
+    activity5.innerText = message;
+    alert(message);
 };

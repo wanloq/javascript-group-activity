@@ -25,14 +25,19 @@ Input (prompt): name, age.
 Processing: dob = currentYear - age
 Output: Hello user, you were born in the year ----
 */
+
+const activity1 = document.querySelector("#activity1");
+
 function greet() {
-    const name = prompt('What is your name?')
-    const age = prompt('How old are you?')
-    const currentYear = 2026
-    const yearOfBirth = currentYear - age
-    let greeting = alert(`Hello ${name}, you were born in the year ${yearOfBirth}`)
-    console.log(greeting)
-    return greeting;
+    const name = prompt('What is your name?').trim();
+    const age = parseInt(prompt('How old are you?'));
+    const currentYear = 2026;
+    const yearOfBirth = currentYear - age;
+    message = `Hey ${name}, you were born in the year ${yearOfBirth}`;
+
+    // display the message on the page as html and as an alert also
+    activity1.innerText = message;
+    alert(message);
 }
 
 /* Part 5: Extension Challenge 
@@ -48,13 +53,16 @@ Processing: dob = currentYear - age
 Output: Hello user, you were born in the year ----
 */
 function greetMore() {
-    const name = prompt('What is your name?');
-    const age = prompt('How old are you?');
+    const name = prompt('What is your name?').trim();
+    const age = parseInt(prompt('How old are you?'));
+    const hobby = prompt('What is your hobby?').trim();
     const currentYear = 2026;
     const yearOfBirth = currentYear - age;
-    let greeting = alert(`Hello ${name}, you were born in the year ${yearOfBirth}`)
-    console.log(greeting);
-    return greeting;
+    message = `Hey ${name}, you were born in the year ${yearOfBirth} and your hobby is ${hobby}.`;
+
+    // display the message on the page as html and as an alert also
+    activity1.innerText = message;
+    alert(message);
 };
 
 

@@ -45,8 +45,8 @@ function placeOrder() {
 
     // Input
     const itemName = prompt('Enter Product Name').trim().toUpperCase();
-    const itemPrice = parseFloat(prompt('What is Price?'));
-    const quantity = parseInt(prompt('How many Pieces?'));
+    const itemPrice = parseFloat(prompt('What is the price of each?'));
+    const quantity = parseInt(prompt('Quantity?'));
 
     // Processing
     const subtotal = (itemPrice, quantity) => itemPrice * quantity;

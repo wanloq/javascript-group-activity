@@ -25,6 +25,8 @@ Processing: total = %increase(amount*(tip/100))
 Output (return): totalTip($) 
 */
 
+const activity8 = document.querySelector("#activity8");
+
 // Tip calculator function: Returns total tip in dollars
 function tipCalculator(amount, tip) {
 
@@ -54,24 +56,29 @@ Output (): build a formatted messages depending on which of the options (split b
 
 // Tip display function: Displays the formatted text summary both as alert and in html.
 function tipDisplay(split) {
-    const activity8 = document.querySelector("#activity8");
-
-    let message = ''
+    let message = '';
 
     // Input
     const amount = parseFloat(prompt('What is the total spend in $$ (e.g. 150)?'));
     const tip = parseFloat(prompt('What is the acceptable tip in percent (e.g. 15)?'));
-    const shareNum = parseInt(prompt('How many will share the bill (e.g. 3)?'));
 
     // check which button the user clicked
     if (split) {
 
         // if user clicked the button to "split the bill":
+        const shareNum = parseInt(prompt('How many will share the bill (e.g. 3)?'));
+
+        // get the total tip from the tip calculator function
+        const totalTip = tipCalculator(amount, tip);
+
         // get  the shared bill from the splitBill function
-        let sharedBill = splitBill(amount, tip, shareNum)
+        let sharedBill = splitBill(amount, totalTip, shareNum);
+
+        // get the total bill from the splitBill function
+        totalBill = splitBill(amount, totalTip, 1);
 
         // build message for a split bill
-        message = `The total bill of $${totalBill} has been successfully divided equally between ${shareNum} people and each person will pay $${sharedBill}`;
+        message = `The total bill of $${totalBill} has been equally split between ${shareNum} people hence each person will pay $${sharedBill}`;
 
     } else {
         // if user clicked the "calculate tip" button:
@@ -88,7 +95,7 @@ function tipDisplay(split) {
 
     // display the message on the page as html and as an alert also
     activity8.innerText = message;
-    alert(message)
+    alert(message);
 
 };
 

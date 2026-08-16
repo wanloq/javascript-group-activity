@@ -29,22 +29,25 @@ Input (prompt): userName, itemName, itemPrice, quantity
 Processing: total = itemPrice * quantity
 Output (alert): Hello User, you bought -- number of -- for 
 */
+const activity2 = document.querySelector("#activity2");
+
 function generateReceipt() {
 
     // Input
-    const userName = prompt('Hello! What is your name?');
-    const itemName = prompt('What did you buy?');
-    const itemPrice = prompt('What is the price of each?');
-    const quantity = prompt('How many did you take?');
+    const userName = prompt('Hello! What is your name?').trim();
+    const itemName = prompt('What did you buy?').trim();
+    const itemPrice = Number(prompt('What is the price of each?'));
+    const quantity = parseInt(prompt('How many did you take?'));
 
     // Processing
     const total = itemPrice * quantity;
 
     // Output
-    let result = alert(`Hello ${userName}, you bought: ${quantity} ${itemName} for $${itemPrice} each. Your total bill is: $${total}`)
-    console.log(result);
+    message = `Hello ${userName}, you bought: ${quantity} ${itemName} for $${itemPrice} each. Your total bill is: $${total}`;
 
-    return result;
+    // display the message on the page as html and as an alert also
+    activity2.innerText = message;
+    alert(message);
 };
 
 /*
@@ -63,18 +66,19 @@ function generateExtendedReceipt() {
 
     let discount = 0;
     // Input
-    const userName = prompt('Hello! What is your name?');
-    const itemName = prompt('What did you buy?');
-    const itemPrice = prompt('What is the price of each?');
-    const quantity = prompt('How many did you take?');
-    discount = prompt('Enter Discount Amount (number only)');
+    const userName = prompt('Hello! What is your name?').trim();
+    const itemName = prompt('What did you buy?').trim();
+    const itemPrice = Number(prompt('What is the price of each?'));
+    const quantity = parseInt(prompt('How many did you take?'));
+    discount = Number(prompt('Enter Discount Amount (number only)'));
 
     // Processing
     const total = itemPrice * quantity;
 
     // Output
-    let result = alert(`Hello ${userName}, you bought: ${quantity} ${itemName} for $${itemPrice} each. The total cost is: $${total} and your total bill after a $${discount} discount is: $${total - discount}`)
-    console.log(result);
+    message = `Hello ${userName}, you bought: ${quantity} ${itemName} for $${itemPrice} each. The total cost is: $${total} and your total bill after a $${discount} discount is: $${total - discount}`;
 
-    return result;
+    // display the message on the page as html and as an alert also
+    activity2.innerText = message;
+    alert(message);
 };

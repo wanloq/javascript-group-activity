@@ -30,6 +30,9 @@ Input (prompt): firstName, favNum
 Processing: convert firstname case, trim whitespace, generate userName
 Output (alert): Hello --, your username is -- 
 */
+
+const activity3 = document.querySelector("#activity3");
+
 function generateUsername() {
 
     // Input
@@ -40,10 +43,11 @@ function generateUsername() {
     const userName = firstName.toLowerCase() + parseInt(favNum);
 
     // Output
-    let result = alert(`Welcome! ${firstName}, your Username is: ${userName}`)
-    console.log(result);
+    message = `Welcome! ${firstName}, your Username is: ${userName}`;
 
-    return result;
+    // display the message on the page as html and as an alert also
+    activity3.innerText = message;
+    alert(message);
 };
 
 
@@ -68,15 +72,16 @@ function generateUsernameExtended() {
     const favNum = prompt('What is your Favorite Number?');
 
     // Processing
-    let shortFirstName = firstName
+    let shortFirstName = firstName;
     if (firstName.length >= 8) {
-        shortFirstName = firstName.slice(0, 7)
+        shortFirstName = firstName.slice(0, 7);
     }
     const userName = shortFirstName.toLowerCase() + parseInt(favNum);
 
     // Output
-    let result = alert(`Welcome! ${firstName}, your Username is: ${userName}`)
-    console.log(result);
+    message = `Welcome! ${firstName}, your Username is: ${userName}`;
 
-    return result;
+    // display the message on the page as html and as an alert also
+    activity3.innerText = message;
+    alert(message);
 };

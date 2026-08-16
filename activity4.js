@@ -27,6 +27,9 @@ Input (prompt): name, score
 Processing: roundedScore = Math.Round(score)
 Output (alert): Hello User, you bought -- number of -- for 
 */
+
+const activity4 = document.querySelector("#activity4");
+
 function generateReport() {
 
     // Input
@@ -37,10 +40,11 @@ function generateReport() {
     const roundedScore = Math.round(score);
 
     // Output
-    let result = alert(`Hello ${name}, your score is ${roundedScore}.`)
-    console.log(result);
+    message = `Hello ${name}, your score is ${roundedScore}.`;
 
-    return result;
+    // display the message on the page as html and as an alert also
+    activity4.innerText = message;
+    alert(message);
 };
 
 /*
@@ -65,12 +69,13 @@ function generateReportExtended() {
 
     // Processing
     // generate random number between 0 and 5
-    const bonus = Math.floor(Math.random() * 6)
+    const bonus = Math.floor(Math.random() * 6);
     const roundedScore = Math.round(score);
 
     // Output
-    let result = alert(`Hello ${name}, your score  with added ${bonus} bonus points is ${roundedScore + bonus}.`)
-    console.log(result);
+    message = `Hello ${name}, your score  with added ${bonus} bonus points is ${roundedScore + bonus}.`;
 
-    return result;
+    // display the message on the page as html and as an alert also
+    activity4.innerText = message;
+    alert(message);
 };
